@@ -17,7 +17,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-# font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 10
 
 # use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
@@ -179,6 +179,7 @@ bindsym Mod4+l move workspace to output left
 bindsym Mod4+Shift+u exec "setxkbmap -layout us -variant intl && rm .i3/config && ln ~/configWorkspace/configUs ~/.i3/config && i3-msg restart"
 bindsym Mod4+F9 exec xrandr --output HDMI1 --off
 bindsym Mod4+F10 exec xrandr --output HDMI1 --auto --left-of eDP1
+bindsym Mod4+F1 exec --no-startup-id /home/thibf/configWorkspace/dashboardi3.sh 
 
 
 
