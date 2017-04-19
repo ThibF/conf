@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 
 mkdir ~/.i3
 cp configFr ~/.i3/

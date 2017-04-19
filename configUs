@@ -146,7 +146,7 @@ bindsym Mod4+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-#        status_command /home/thibf/i3Config/i3BarScript.sh
+        status_command ~/configWorkspace/i3BarScript.sh
 
 }
 
