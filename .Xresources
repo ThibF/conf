@@ -1,0 +1,120 @@
+! *.font: -benis-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+! *.boldFont: -benis-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+
+! URXVT GENERAL CONFIG
+!------------------------------------------------
+! URxvt*iconFile: /usr/share/icons/Faenza/apps/32/utilities-terminal.png
+! IRC*iconFile: /usr/share/icons/Faenza/apps/32/xchat.png
+! URxvt.geometry: 80x22
+! URXVT FONTS
+!------------------------------------------------
+
+
+!URxvt.font: -benis-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt.boldFont: -benis-lemon-bold-*-*-*-*-*-*-*-*-*-*-*
+!URxvt.italicfont: -benis-lemon-*-i-*-*-*-*-*-*-*-*-*-*
+!URxvt.bolditalicFont: -benis-lemon-bold-i-*-*-*-*-*-*-*-*-*-*
+
+URxvt.font: xft:Monospace:size=8
+URxvt.boldFont: xft:Monospace:bold:size=10
+URxvt.italicFont: xft:Monospace:italic:size=10
+URxvt.bolditalicFont: xft:Monospace:bold italic:size=10
+
+URxvt.letterSpace: -1
+URxvt.allowBold: true
+! URXVT FONT SETTINGS
+!------------------------------------------------
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+URxvt.perl-lib: /usr/lib/urxvt/perl
+
+! URXVT ENABLE LINK SUPPORT
+!------------------------------------------------
+URxvt.perl-ext-common: default,matcher,clipboard
+!tabbed
+URxvt.matcher.button: 1
+URxvt.perl-ext: default
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/google-chrome-unstable
+URxvt.url-select.underline: true
+!disable the fucking bell
+URxvt.insecure: false
+! URXVT COPY PASTE SHORTCUTS
+!------------------------------------------------
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+! URXVT SCROLLBAR AND CURSOR STYLE
+!------------------------------------------------
+URxvt.saveLines: -1
+URxvt.scrollBar: false
+!URxvt*scrollstyle: plain
+URxvt*cursorBlink: true
+URxvt*cursorUnderline: true
+Urxvt.hold: true
+
+! URxvt.keysym.S-Up: \033[1;2A
+! URxvt.keysym.S-Down: \033[1;2B
+! URxvt.keysym.S-Right: \033[1;2C
+! URxvt.keysym.S-Left: \033[1;2D
+! URxvt.keysym.S-Home: \033[1;2H
+! URxvt.keysym.S-End: \033[1;2F
+! URxvt.keysym.C-Up: \033[1;5A
+! URxvt.keysym.C-Down: \033[1;5B
+! URxvt.keysym.C-Right: \033[1;5C
+! URxvt.keysym.C-Left: \033[1;5D
+! URxvt.keysym.C-S-Up: \033[1;6A
+! URxvt.keysym.C-S-Down: \033[1;6B
+! URxvt.keysym.C-S-Right: \033[1;6C
+! URXvt.keysym.C-S-Left: \033[1;6D
+
+
+! URXVT COLORS
+!------------------------------------------------
+! vim: set filetype=xdefaults :
+
+! special
+!*.foreground: #93a1a1
+*.foreground: #d2d8d8
+*.background: #3c3b37
+*.cursorColor: #93a1a1
+
+! black
+*.color0: #5f5f5f
+*.color8: #828282
+
+! red
+*.color1: #d96468
+*.color9: #d98f93
+
+! green
+*.color2: #a2d964
+*.color10: #b8d98f
+
+! yellow
+*.color3: #d9c964
+*.color11: #d9cf8f
+
+! blue
+*.color4: #64a2d9
+*.color12: #8f99d9
+
+! magenta
+*.color5: #9a64d9
+*.color13: #b08fd9
+
+! cyan
+*.color6: #64d9d5
+*.color14: #8fd9d5
+
+! white
+*.color7: #989898
+*.color15: #c5c5c5
+
