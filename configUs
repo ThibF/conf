@@ -178,8 +178,11 @@ bindsym Mod4+l move workspace to output left
 
 bindsym Mod4+Shift+f exec "setxkbmap -layout fr && rm .i3/config && ln ~/configWorkspace/configFr ~/.i3/config && i3-msg restart"
 
-bindsym Mod4+F9 exec xrandr --output HDMI1 --off
-bindsym Mod4+F10 exec xrandr --output HDMI1 --auto --left-of eDP1
+#bindsym Mod4+F9 exec xrandr --output HDMI-1 --off
+#bindsym Mod4+F10 exec xrandr --output HDMI-1 --auto --left-of eDP-1
+
+#bindsym Mod4+F9 exec xrandr --output HDMI1 --off
+#bindsym Mod4+F10 exec xrandr --output HDMI1 --auto --left-of eDP1
 bindsym Mod4+F1 exec --no-startup-id /home/thibf/configWorkspace/dashboardi3.sh 
 bindsym Mod4+F2 exec --no-startup-id /home/thibf/configWorkspace/devFirmwarei3.sh 
 bindsym Mod4+F3 exec --no-startup-id /home/thibf/configWorkspace/eclipsei3.sh 
@@ -195,6 +198,28 @@ bindsym Mod4+F3 exec --no-startup-id /home/thibf/configWorkspace/eclipsei3.sh
 # Please remove the following exec line:
 #######################################################################
 #exec i3-config-wizard
+
+
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec ~/configWorkspace/increaseBrightness # increase screen brightness
+bindsym XF86MonBrightnessDown exec ~/configWorkspace/decreaseBrightness  # decrease screen brightness
+
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+
+
+
 exec --no-startup-id nm-applet
 exec --no-startup-id fluxgui
 exec setxkbmap -layout us -variant intl
