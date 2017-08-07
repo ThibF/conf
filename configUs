@@ -200,4 +200,7 @@ bindsym Mod4+F3 exec --no-startup-id /home/thibf/configWorkspace/eclipsei3.sh
 #######################################################################
 #exec i3-config-wizard
 exec --no-startup-id nm-applet
+exec --no-startup-id fluxgui
 exec setxkbmap -layout us -variant intl
+exec --no-startup-id feh --bg-scale ~/configWorkspace/wallpaper_cloud.png
+
