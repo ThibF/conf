@@ -178,8 +178,8 @@ bindsym Mod4+l move workspace to output left
 
 bindsym Mod4+Shift+f exec "setxkbmap -layout fr && rm .i3/config && ln ~/configWorkspace/configFr ~/.i3/config && i3-msg restart"
 
-#bindsym Mod4+F9 exec xrandr --output HDMI-1 --off
-#bindsym Mod4+F10 exec xrandr --output HDMI-1 --auto --left-of eDP-1
+bindsym Mod4+F9 exec xrandr --output HDMI-1 --off
+bindsym Mod4+F10 exec xrandr --output HDMI-1 --auto --left-of eDP-1
 
 #bindsym Mod4+F9 exec xrandr --output HDMI1 --off
 #bindsym Mod4+F10 exec xrandr --output HDMI1 --auto --left-of eDP1
