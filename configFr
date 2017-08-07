@@ -179,7 +179,7 @@ bindsym Mod4+l move workspace to output left
 bindsym Mod4+Shift+u exec "setxkbmap -layout us -variant intl && rm .i3/config && ln ~/configWorkspace/configUs ~/.i3/config && i3-msg restart"
 bindsym Mod4+F9 exec xrandr --output HDMI1 --off
 bindsym Mod4+F10 exec xrandr --output HDMI1 --auto --left-of eDP1
-bindsym Mod4+F1 exec --no-startup-id /home/thibf/configWorkspace/dashboardi3.sh 
+#bindsym Mod4+F1 exec --no-startup-id /home/thibf/configWorkspace/dashboardi3.sh 
 bindsym Mod4+F2 exec --no-startup-id /home/thibf/configWorkspace/devFirmwarei3.sh 
 bindsym Mod4+F3 exec --no-startup-id /home/thibf/configWorkspace/eclipsei3.sh 
 
