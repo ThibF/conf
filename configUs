@@ -138,15 +138,15 @@ mode "resize" {
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
-}
+ }
 
 bindsym Mod4+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-#status_command ~/configWorkspace/i3BarScript.sh
+        status_command i3blocks
+#        status_command ~/configWorkspace/i3BarScript.sh
 
 }
 

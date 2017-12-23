@@ -9,6 +9,7 @@ cp workspaceDashboard2.json ~/.i3/
 sudo apt-get install rxvt-unicode zsh feh
 cp i3status.conf ~/.i3status.conf
 cp .Xresources ~/
+cp -r i3blocks ~/.config/
 sudo apt-get install rxvt-unicode
 
 
