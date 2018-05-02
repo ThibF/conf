@@ -8,7 +8,7 @@
 ! URxvt.geometry: 80x22
 ! URXVT FONTS
 !------------------------------------------------
-
+!URxvt.perl-lib: ~/repo/urxvt-perls/
 
 !URxvt.font: -benis-lemon-*-*-*-*-*-*-*-*-*-*-*-*
 !URxvt.boldFont: -benis-lemon-bold-*-*-*-*-*-*-*-*-*-*-*
@@ -35,7 +35,7 @@ URxvt.perl-lib: /usr/lib/urxvt/perl
 
 ! URXVT ENABLE LINK SUPPORT
 !------------------------------------------------
-URxvt.perl-ext-common: default,matcher,clipboard
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard
 !tabbed
 URxvt.matcher.button: 1
 URxvt.perl-ext: default
@@ -47,8 +47,6 @@ URxvt.insecure: false
 ! URXVT COPY PASTE SHORTCUTS
 !------------------------------------------------
 URxvt.iso14755: False
-URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
 ! URXVT SCROLLBAR AND CURSOR STYLE
