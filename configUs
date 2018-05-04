@@ -184,6 +184,7 @@ bindsym Mod4+Shift+f exec "setxkbmap -layout fr && rm .i3/config && ln ~/configW
 
 bindsym Mod4+F9 exec xrandr --output HDMI1 --off
 bindsym Mod4+F10 exec xrandr --output HDMI1 --auto --left-of eDP1
+bindsym Mod4+F11 exec xrandr --output HDMI1 --auto --right-of eDP1
 #bindsym Mod4+F1 exec --no-startup-id /home/thibf/configWorkspace/dashboardi3.sh 
 bindsym Mod4+F2 exec --no-startup-id /home/thibf/configWorkspace/devFirmwarei3.sh 
 bindsym Mod4+F3 exec --no-startup-id /home/thibf/configWorkspace/eclipsei3.sh 
