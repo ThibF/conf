@@ -6,7 +6,7 @@ mkdir ~/.i3
 cp configFr ~/.i3/
 cp workspaceFirmware.json ~/.i3/
 cp workspaceDashboard2.json ~/.i3/
-sudo apt-get install rxvt-unicode zsh feh
+sudo apt-get install rxvt-unicode zsh feh i3blocks fonts-font-awesome
 cp i3status.conf ~/.i3status.conf
 cp .Xresources ~/
 cp -r i3blocks ~/.config/
