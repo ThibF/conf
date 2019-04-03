@@ -1,8 +1,7 @@
 #!/bin/sh
 
-sudo apt-get install zsh feh xsel nano docker docker-compose git htop screen
-sudo apt install fail2ban
-chsh -s /bin/zsh tibx
+sudo apt-get install zsh feh nano docker docker-compose git htop screen
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ##Secure ssh
 #sudo nano /etc/ssh/sshd_config
