@@ -15,10 +15,10 @@
 !URxvt.italicfont: -benis-lemon-*-i-*-*-*-*-*-*-*-*-*-*
 !URxvt.bolditalicFont: -benis-lemon-bold-i-*-*-*-*-*-*-*-*-*-*
 
-URxvt.font: xft:Monospace:size=8
-URxvt.boldFont: xft:Monospace:bold:size=10
-URxvt.italicFont: xft:Monospace:italic:size=10
-URxvt.bolditalicFont: xft:Monospace:bold italic:size=10
+URxvt.font: xft:Monospace:size=15
+URxvt.boldFont: xft:Monospace:bold:size=19
+URxvt.italicFont: xft:Monospace:italic:size=19
+URxvt.bolditalicFont: xft:Monospace:bold italic:size=19
 
 URxvt.letterSpace: -1
 URxvt.allowBold: true
