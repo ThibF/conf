@@ -178,9 +178,9 @@ bindsym Mod4+l move workspace to output left
 
 bindsym Mod4+Shift+f exec "setxkbmap -layout fr && rm .i3/config && ln ~/configWorkspace/configFr ~/.i3/config && i3-msg restart"
 
-bindsym Mod4+F9 exec xrandr --output DP-2-2 --off
-bindsym Mod4+F10 exec xrandr --output DP-2-2 --auto --left-of eDP-1
-bindsym Mod4+F11 exec xrandr --output DP-2-2 --auto --right-of eDP-1
+bindsym Mod4+F9 exec xrandr --output DP2-2 --off --output DP1 --off --output DP2 --off
+bindsym Mod4+F10 exec xrandr --output DP2-2 --auto --left-of eDP1
+bindsym Mod4+F11 exec xrandr --output DP2-2 --auto --right-of eDP1
 #bindsym Mod4+F1 exec --no-startup-id /home/thibf/configWorkspace/dashboardi3.sh 
 #bindsym Mod4+F2 exec --no-startup-id /home/thibf/configWorkspace/devFirmwarei3.sh 
 #bindsym Mod4+F3 exec --no-startup-id /home/thibf/configWorkspace/eclipsei3.sh 
@@ -225,3 +225,6 @@ exec --no-startup-id feh --bg-fill ~/configWorkspace/wallpaper_cloud.png
 
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xrdb -load .Xressources
+workspace_auto_back_and_forth yes
+bindsym Mod4+Tab workspace back_and_forth
+bindsym Mod1+Tab workspace back_and_forth
