@@ -38,7 +38,7 @@ markup=none
 label=♪
 instance=Master
 #instance=PCM
-interval=once
+interval=1
 signal=10
 color=#eee8d5
 # Memory usage
@@ -168,3 +168,6 @@ interval=10
 #interval=once
 #signal=11
 
+[script]
+command=~/.config/i3blocks/rain_checker.sh
+interval=150
