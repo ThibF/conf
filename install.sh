@@ -12,6 +12,10 @@ ln -fs $(pwd)/i3blocks ~/.config/i3blocks
 sudo apt-get install rxvt-unicode
 sudo ln -fs $(pwd)/xorg.conf.new /etc/X11/xorg.conf
 
+if command -v nautilus; then
+	cp $(pwd)/user-dirs.dirs .config/user-dirs.dirs
+fi
+
 echo "Installing JetBrainsMono-1 font"
 if wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip; then
 	if unzip JetBrainsMono-1.0.3.zip; then
