@@ -15,12 +15,12 @@
 !URxvt.italicfont: -benis-lemon-*-i-*-*-*-*-*-*-*-*-*-*
 !URxvt.bolditalicFont: -benis-lemon-bold-i-*-*-*-*-*-*-*-*-*-*
 
-URxvt.font: xft:Monospace:size=18
-URxvt.boldFont: xft:Monospace:bold:size=19
-URxvt.italicFont: xft:Monospace:italic:size=19
-URxvt.bolditalicFont: xft:Monospace:bold italic:size=19
+URxvt.font: xft:JetBrains Mono:size=18
+URxvt.boldFont: xft:JetBrains Mono:bold:size=19
+URxvt.italicFont: xft:JetBrains Mono:italic:size=19
+URxvt.bolditalicFont: xft:JetBrains Mono:bold italic:size=19
 
-URxvt.letterSpace: -1
+URxvt.letterSpace: 0
 URxvt.allowBold: true
 ! URXVT FONT SETTINGS
 !------------------------------------------------
