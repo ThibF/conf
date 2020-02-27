@@ -14,6 +14,7 @@ sudo ln -fs "$(pwd)/xorg.conf.new" /etc/X11/xorg.conf
 
 if command -v nautilus; then
 	cp "$(pwd)/user-dirs.dirs" ~/.config/user-dirs.dirs
+	sudo cp "$(pwd)/user-dirs.defaults" /etc/xdg/user-dirs.defaults
 fi
 
 echo "Installing JetBrainsMono-1 font"
