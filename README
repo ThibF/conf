@@ -2,3 +2,8 @@ TODO :
 Configure urxvt (color)
 Install unicode font
 Configure correctly i3status and branch if nessecary
+
+
+NOTES:
+bg_removal
+https://www.imagemagick.org/Usage/scripts/bg_removal
