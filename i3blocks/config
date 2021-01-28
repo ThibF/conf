@@ -39,7 +39,7 @@ label=♪
 instance=Master
 #instance=PCM
 interval=1
-signal=10
+#signal=10
 color=#eee8d5
 # Memory usage
 #
