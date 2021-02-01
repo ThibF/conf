@@ -35,7 +35,7 @@ URxvt.perl-lib: /usr/lib/urxvt/perl
 
 ! URXVT ENABLE LINK SUPPORT
 !------------------------------------------------
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard
+URxvt.perl-ext-common: default,matcher,resize-font
 !tabbed
 URxvt.matcher.button: 1
 URxvt.perl-ext: default

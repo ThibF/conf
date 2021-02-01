@@ -12,6 +12,9 @@ ln -fs "$(pwd)/i3blocks" ~/.config/i3blocks
 sudo apt-get install rxvt-unicode
 sudo ln -fs "$(pwd)/xorg.conf.new" /etc/X11/xorg.conf
 
+sudo mkdir -p /usr/lib/urxvt/perl
+sudo cp "$(pwd)/resize-font" /usr/lib/urxvt/perl
+
 if command -v nautilus; then
 	cp "$(pwd)/user-dirs.dirs" ~/.config/user-dirs.dirs
 	sudo cp "$(pwd)/user-dirs.defaults" /etc/xdg/user-dirs.defaults
