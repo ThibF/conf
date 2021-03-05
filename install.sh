@@ -31,6 +31,10 @@ if wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.3.zip; then
 	xrdb -load ~/.Xressources
 	i3-msg "reload"
 fi
+
+echo 'DISABLE_UPDATE_PROMPT="true"' >> ~/.zshrc
+echo 'export UPDATE_ZSH_DAYS=31' >> ~/.zshrc
+
 #sudo apt install dbus lua-lgi lua-posix lua5.1 luajit qemu qemu-user-static htop meld pavucontrol automake screen microcom u-boot-tools device-tree-compiler iperf chromium-browser kdeconnect nmap
 #sudo apt install qemu-user-static
 
