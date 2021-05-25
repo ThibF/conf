@@ -176,7 +176,7 @@ bindsym Mod4+p mode "$mode_system"
 bindsym Mod4+m move workspace to output right
 bindsym Mod4+l move workspace to output left
 
-bindsym Mod4+F9 exec xrandr --output DP2-2 --off --output DP1 --off --output DP2 --off && xrandr --output eDP1 --mode 3840x2160 && compton -b
+bindsym Mod4+F9 exec xrandr --output DP2-3 --off --output DP2-2 --off --output DP1 --off --output DP2 --off && xrandr --output eDP1 --mode 3840x2160 && compton -b
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
