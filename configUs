@@ -155,7 +155,7 @@ bar {
 # Locker is starting i3lock and forces dpms off to turn off the screen immediately
 set $Locker i3lock -i /home/thibf/Downloads/wallpaper-2710336.png -p default -n -d -c 364b71
 #&& xset dpms force off
-bindsym Mod4+Shift+l exec $Locker
+bindsym Mod4+Shift+l exec playerctl pause; exec $Locker
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
