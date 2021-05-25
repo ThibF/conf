@@ -15,7 +15,7 @@ is_int() {
 }
 set -e
 
-PRECIPITATIONS_VALUES=$(curl -s 'https://cdn-secure.buienalarm.nl/api/3.4/forecast.php?lat=52.3404&lon=4.8669&region=nl&unit=mm/u' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:69.0) Gecko/20100101 Firefox/69.0' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Origin: https://www.buienalarm.nl' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'Referer: https://www.buienalarm.nl/' | jq .precip)
+PRECIPITATIONS_VALUES=$(curl -s 'https://cdn-secure.buienalarm.nl/api/3.4/forecast.php?lat=52.0883&lon=5.0553&region=nl&unit=mm/u' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:69.0) Gecko/20100101 Firefox/69.0' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Origin: https://www.buienalarm.nl' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'Referer: https://www.buienalarm.nl/' | jq .precip)
 #echo $PRECIPITATIONS_VALUES
 
 _number_of_line_printed="0"
