@@ -350,3 +350,4 @@ mode "$mode_gaps_left" {
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
+bindsym Mod4+n exec i3-input -F "rename workspace to $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true)' | jq .num):%s"
