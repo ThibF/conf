@@ -52,3 +52,4 @@ echo 'export UPDATE_ZSH_DAYS=31' >> ~/.zshrc
 #sudo usermod -a -G dialout ${USER}
 #sudo usermod -a -G docker ${USER}
 
+# sudo npm install -g hueadm

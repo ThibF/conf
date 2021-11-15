@@ -171,3 +171,7 @@ interval=10
 [script]
 command=~/.config/i3blocks/rain_checker.sh
 interval=150
+
+[script]
+command=~/.config/i3blocks/night_checker.sh
+interval=300
