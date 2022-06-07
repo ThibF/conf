@@ -42,7 +42,7 @@ interval=1
 signal=10
 color=#eee8d5
 
-[script]
+[micro_checker]
 command=~/.config/i3blocks/micro_checker.sh
 interval=300
 

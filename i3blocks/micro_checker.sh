@@ -33,17 +33,21 @@ fi
 
 # Check if all sources are in sync
 sources="$("${PACTL}" list short sources | grep input | cut -d '	' -f 1)"
+if [ -z ${sources} ]; then
+	error
+fi
+
 for i in $sources; do
 	state="$("${PACTL}" get-source-mute $i | cut -d ' ' -f 2)"
 	if [ "${state}" != "${new_state:-${state}}" ]; then
 		# mute all
-		"${PACTL}" list short sources | awk -v PACTL="${PACTL}" '/input.*RUNNING/ {system(PACTL " set-source-mute " $1 " 1")}'
+		"${PACTL}" list short sources | awk -v PACTL="${PACTL}" '/input/ {system(PACTL " set-source-mute " $1 " 1")}'
 	fi
 	new_state="${state}"
 done
 
 if [ "${BLOCK_BUTTON:-0}" -eq 1 ]; then
-	"${PACTL}" list short sources | awk -v PACTL="${PACTL}" '/input.*RUNNING/ {system(PACTL " set-source-mute " $1 " toggle")}'
+	"${PACTL}" list short sources | awk -v PACTL="${PACTL}" '/input/ {system(PACTL " set-source-mute " $1 " toggle")}'
 	state="$("${PACTL}" get-source-mute $i | cut -d ' ' -f 2)"
 fi
 
