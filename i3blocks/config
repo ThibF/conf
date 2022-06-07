@@ -41,6 +41,11 @@ instance=Master
 interval=1
 signal=10
 color=#eee8d5
+
+[script]
+command=~/.config/i3blocks/micro_checker.sh
+interval=300
+
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
