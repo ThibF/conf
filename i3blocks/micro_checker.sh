@@ -46,6 +46,11 @@ for i in $sources; do
 	new_state="${state}"
 done
 
+
+if [ -n "${1:-}" ]; then
+	BLOCK_BUTTON=1
+fi
+
 if [ "${BLOCK_BUTTON:-0}" -eq 1 ]; then
 	"${PACTL}" list short sources | awk -v PACTL="${PACTL}" '/input/ {system(PACTL " set-source-mute " $1 " toggle")}'
 	state="$("${PACTL}" get-source-mute $i | cut -d ' ' -f 2)"

@@ -45,6 +45,7 @@ color=#eee8d5
 [micro_checker]
 command=~/.config/i3blocks/micro_checker.sh
 interval=300
+signal=10
 
 # Memory usage
 #

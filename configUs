@@ -203,6 +203,8 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 bindsym Mod4+Shift+Control+1 workspace number 11; exec urxvt;
 
+# xmodmap -pke + xev to get values
+bindsym Menu exec --no-startup-id ~/configWorkspace/i3blocks/micro_checker.sh TOGGLE && pkill -RTMIN+10 i3blocks
 
 exec --no-startup-id nm-applet
 exec --no-startup-id gtk-redshift
