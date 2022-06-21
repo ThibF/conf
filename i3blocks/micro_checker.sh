@@ -33,7 +33,7 @@ fi
 
 # Check if all sources are in sync
 sources="$("${PACTL}" list short sources | grep input | cut -d '	' -f 1)"
-if [ -z ${sources} ]; then
+if [ -z "${sources:-}" ]; then
 	error
 fi
 
