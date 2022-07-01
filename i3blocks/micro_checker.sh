@@ -54,6 +54,9 @@ fi
 if [ "${BLOCK_BUTTON:-0}" -eq 1 ]; then
 	"${PACTL}" list short sources | awk -v PACTL="${PACTL}" '/input/ {system(PACTL " set-source-mute " $1 " toggle")}'
 	state="$("${PACTL}" get-source-mute $i | cut -d ' ' -f 2)"
+        if [ "${state}" = "no" ]; then
+             playerctl pause
+        fi
 fi
 
 
