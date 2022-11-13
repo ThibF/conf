@@ -5,6 +5,7 @@ set -eu
 # To build it, you can use the docker image shipped by freedesktop
 #   registry.freedesktop.org/pulseaudio/pulseaudio/ubuntu/20.04:2021-11-03-00
 #   git clone https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git
+#   cd pulseaudio
 #   meson build
 #   wget -q https://github.com/mesonbuild/meson/releases/download/0.50.0/meson-0.50.0.tar.gz
 #   tar -xf meson-0.50.0.tar.gz
