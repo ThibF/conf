@@ -83,6 +83,9 @@ bindsym Mod4+a focus parent
 # Automatic App sorting - get the class with i3-save-tree
 # https://i3wm.org/docs/userguide.html#for_window
 for_window [class="(?i)obsidian"] move container to workspace o:Obsidian
+for_window [title="(?i)google meet"] move container to workspace c:Call
+for_window [title="(?i)Jitsi"] move container to workspace c:Call
+for_window [class="(?i)Sublime_text"] move container to workspace e:Editor
 
 # switch to workspace
 bindsym Mod4+1 workspace number 1
@@ -100,6 +103,7 @@ bindsym Mod4+b workspace b:Build
 bindsym Mod4+u workspace u:Flash
 bindsym Mod4+y workspace y:Media
 bindsym Mod4+e workspace e:Editor
+bindsym Mod4+c workspace c:Call
 
 # move focused container to workspace
 bindsym Mod4+Shift+1 move container to workspace 1
@@ -117,6 +121,7 @@ bindsym Mod4+Shift+b move container to workspace b:Build
 bindsym Mod4+Shift+u move container to workspace u:Flash
 bindsym Mod4+Shift+y move container to workspace y:Media
 bindsym Mod4+Shift+e move container to workspace e:Editor
+bindsym Mod4+Shift+c move container to workspace c:Call
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod4+Shift+r restart
@@ -234,8 +239,8 @@ workspace_auto_back_and_forth yes
 bindsym Mod4+Tab workspace back_and_forth
 bindsym Mod1+Tab workspace back_and_forth
 
-bindsym Mod4+Shift+c move scratchpad
-bindsym Mod4+Shift+v scratchpad show
+#bindsym Mod4+Shift+c move scratchpad
+#bindsym Mod4+Shift+v scratchpad show
 
 #gaps inner 20
 #gaps outer 15
