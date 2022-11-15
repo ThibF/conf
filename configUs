@@ -86,6 +86,7 @@ for_window [class="(?i)obsidian"] move container to workspace o:Obsidian
 for_window [title="(?i)google meet"] move container to workspace c:Call
 for_window [title="(?i)Jitsi"] move container to workspace c:Call
 for_window [class="(?i)Sublime_text"] move container to workspace e:Editor
+for_window [class="(?i)Gnome-calculator"] floating toggle
 
 # switch to workspace
 bindsym Mod4+1 workspace number 1
