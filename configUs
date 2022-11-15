@@ -92,6 +92,11 @@ bindsym Mod4+7 workspace number 7
 bindsym Mod4+8 workspace number 8
 bindsym Mod4+9 workspace number 9
 bindsym Mod4+0 workspace number 10
+bindsym Mod4+o workspace o:Obsidian
+bindsym Mod4+b workspace b:Build
+bindsym Mod4+u workspace u:Flash
+bindsym Mod4+y workspace y:Media
+bindsym Mod4+e workspace e:Editor
 
 # move focused container to workspace
 bindsym Mod4+Shift+1 move container to workspace 1
@@ -104,11 +109,14 @@ bindsym Mod4+Shift+7 move container to workspace 7
 bindsym Mod4+Shift+8 move container to workspace 8
 bindsym Mod4+Shift+9 move container to workspace 9
 bindsym Mod4+Shift+0 move container to workspace 10
+bindsym Mod4+Shift+o move container to workspace o:Obsidian
+bindsym Mod4+Shift+b move container to workspace b:Build
+bindsym Mod4+Shift+u move container to workspace u:Flash
+bindsym Mod4+Shift+y move container to workspace y:Media
+bindsym Mod4+Shift+e move container to workspace e:Editor
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod4+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
