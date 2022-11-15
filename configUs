@@ -80,6 +80,9 @@ bindsym Mod4+a focus parent
 # focus the child container
 #bindsym Mod4+d focus child
 
+# Automatic App sorting - get the class with i3-save-tree
+# https://i3wm.org/docs/userguide.html#for_window
+for_window [class="(?i)obsidian"] move container to workspace o:Obsidian
 
 # switch to workspace
 bindsym Mod4+1 workspace number 1
