@@ -84,9 +84,11 @@ bindsym Mod4+a focus parent
 # https://i3wm.org/docs/userguide.html#for_window
 for_window [class="(?i)obsidian"] move container to workspace o:Obsidian
 for_window [title="(?i)google meet"] move container to workspace c:Call
+for_window [title="(?i)meet"] move container to workspace c:Call
 for_window [title="(?i)Jitsi"] move container to workspace c:Call
 for_window [class="(?i)Sublime_text"] move container to workspace e:Editor
 for_window [class="(?i)Gnome-calculator"] floating toggle
+for_window [class="(?i)Steam"] move container to workspace s:Steam
 
 # switch to workspace
 bindsym Mod4+1 workspace number 1
@@ -105,6 +107,7 @@ bindsym Mod4+u workspace u:Flash
 bindsym Mod4+y workspace y:Media
 bindsym Mod4+e workspace e:Editor
 bindsym Mod4+c workspace c:Call
+bindsym Mod4+s workspace s:Steam
 
 # move focused container to workspace
 bindsym Mod4+Shift+1 move container to workspace 1
@@ -123,6 +126,9 @@ bindsym Mod4+Shift+u move container to workspace u:Flash
 bindsym Mod4+Shift+y move container to workspace y:Media
 bindsym Mod4+Shift+e move container to workspace e:Editor
 bindsym Mod4+Shift+c move container to workspace c:Call
+bindsym Mod4+Shift+s move container to workspace s:Steam
+
+bindsym Mod4+g sticky toggle
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod4+Shift+r restart
