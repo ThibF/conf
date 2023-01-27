@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu
+set -eux
 
 # Require pactl > v15.0.0 which isn't shipped in ubuntu 20.04
 # To build it, you can use the docker image shipped by freedesktop
@@ -24,16 +24,24 @@ error() {
 trap error EXIT
 LOCAL_PACTL="$HOME/configWorkspace/pulseaudio/utils/pactl"
 PACTL="$(which pactl)"
+PLAYERCTL="$(which playerctl)"
+
 if ! ${PACTL} get-source-mute @DEFAULT_SOURCE@ > /dev/null 2>&1; then
 	if ! [ -x "${LOCAL_PACTL}" ]; then
 		# install pactl > 15.00
 		error
 	fi
 	PACTL="${LOCAL_PACTL}"
+	if ! ${PACTL} get-source-mute @DEFAULT_SOURCE@ > /dev/null 2>&1; then
+		# install pactl > 15.00
+		error
+	fi
 fi
 
+
+
 # Check if all sources are in sync
-sources="$("${PACTL}" list short sources | grep input | cut -d '	' -f 1)"
+sources="$("${PACTL}" list short sources | cut -d '	' -f 1)"
 if [ -z "${sources:-}" ]; then
 	error
 fi
@@ -41,11 +49,17 @@ fi
 for i in $sources; do
 	state="$("${PACTL}" get-source-mute $i | cut -d ' ' -f 2)"
 	if [ "${state}" != "${new_state:-${state}}" ]; then
-		# mute all
-		"${PACTL}" list short sources | awk -v PACTL="${PACTL}" '/input/ {system(PACTL " set-source-mute " $1 " 1")}'
+		# mute state inconsistent across all sources -> mute all
+		mute_all="1"
 	fi
 	new_state="${state}"
 done
+
+if [ -n "${mute_all:-}" ]; then 
+	for i in $sources; do
+		"${PACTL}" set-source-mute "${i}" 1
+	done
+fi
 
 
 if [ -n "${1:-}" ]; then
@@ -53,11 +67,13 @@ if [ -n "${1:-}" ]; then
 fi
 
 if [ "${BLOCK_BUTTON:-0}" -eq 1 ]; then
-	"${PACTL}" list short sources | awk -v PACTL="${PACTL}" '/input/ {system(PACTL " set-source-mute " $1 " toggle")}'
-	state="$("${PACTL}" get-source-mute $i | cut -d ' ' -f 2)"
-        if [ "${state}" = "no" ]; then
-             playerctl pause
-        fi
+	for i in $sources; do
+		"${PACTL}" set-source-mute "${i}" toggle
+		state="$("${PACTL}" get-source-mute $i | cut -d ' ' -f 2)"
+		if [ "${state}" = "no" ]; then
+			 "${PLAYERCTL:--}" pause
+		fi
+	done
 fi
 
 
