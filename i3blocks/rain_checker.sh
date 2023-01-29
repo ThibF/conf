@@ -37,8 +37,8 @@ for _value in $PRECIPITATIONS_VALUES; do
   if [ "${_number_of_line_printed}" -gt 23 ]; then
     exit 0
   fi
-  if [ `expr $_number_of_line_printed % 6` -eq 0 ]; then
-    if [ "${BLOCK_BUTTON}" -eq 1 ]; then
+  if [ "$((_number_of_line_printed % 6))" -eq 0 ]; then
+    if [ "${BLOCK_BUTTON:-0}" -eq 1 ]; then
       printf "|"
     else
       exit 0
