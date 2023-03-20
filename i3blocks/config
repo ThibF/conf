@@ -42,11 +42,6 @@ interval=1
 signal=10
 color=#eee8d5
 
-[micro_checker]
-command=~/.config/i3blocks/micro_checker.sh
-interval=300
-signal=10
-
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
@@ -172,6 +167,21 @@ interval=10
 #instance=NUM
 #interval=once
 #signal=11
+
+[loop_test]
+command=~/.config/i3blocks/loop_test.sh
+interval=persist
+
+[light_control]
+command=~/.config/i3blocks/light_control.sh
+interval=once
+
+#PACTL=/home/thibf/configWorkspace/pulseaudio/utils/pactl
+#[micro_checker]
+#command='PACTL=/home/thibf/configWorkspace/pulseaudio/utils/pactl /home/thibf/.config/i3blocks/micro_checker.sh'
+#command=~/.config/i3blocks/micro_checker.sh
+#interval=10
+#signal=10
 
 [script]
 command=~/.config/i3blocks/rain_checker.sh

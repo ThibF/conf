@@ -72,14 +72,18 @@ switch_state() {
 
 
 print_current_status() {
+	if [ "${state}" = "yes" ]; then
+		micro_state=""
+	elif [ "${state}" = "no" ]; then
+		#echo "🔴🔴"
+		micro_state=""
+	else
+		error
+	fi
 	if is_microphone_active; then
-		if [ "${state}" = "yes" ]; then
-			echo "  "
-		elif [ "${state}" = "no" ]; then
-			echo "🔴🔴"
-		else
-			error
-		fi
+		echo "${micro_state}"
+	else
+		echo "${micro_state}"
 	fi
 }
 
@@ -96,6 +100,7 @@ main() {
 	PLAYERCTL="$(which playerctl)"
 	find_pactl
 	if ! is_microphone_active; then
+		echo ""
 		return
 	fi
 	check_current_state
