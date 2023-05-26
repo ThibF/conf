@@ -1,9 +1,12 @@
-TODO :
-Configure urxvt (color)
-Install unicode font
+# TODO :
 Configure correctly i3status and branch if nessecary
 
 
-NOTES:
+# Interesting Crontab entry
+55 9-16 * * 1-5 notify-send "Drink water"
+
+# NOTES:
 bg_removal
 https://www.imagemagick.org/Usage/scripts/bg_removal
+
+https://fontawesome-v4.github.io/cheatsheet/index.html
