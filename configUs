@@ -231,14 +231,13 @@ bindsym Menu exec --no-startup-id ~/configWorkspace/i3blocks/micro_checker.sh TO
 
 exec --no-startup-id nm-applet
 exec --no-startup-id gtk-redshift
-exec --no-startup-id fluxgui
 exec --no-startup-id compton -b
-exec setxkbmap -layout us -variant intl
 exec --no-startup-id feh --bg-fill ~/configWorkspace/wallpaper_cloud.png
 
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xrdb -load .Xressources
 exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'panga:DejaVu Sans Mono:pixelsize=35'"
+exec --no-startup-id setxkbmap -layout us -variant intl
 
 bindsym Mod4+Tab workspace back_and_forth
 bindsym Mod1+Tab workspace back_and_forth
