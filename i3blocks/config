@@ -114,7 +114,6 @@ min_width=C 00.00%
 [batterybar]
 command=~/.config/i3blocks/batterybar #run batterybar -h for options 
 label=⚡
-interval=10
 markup=pango
 min_width=bat: ■■■■■
 
