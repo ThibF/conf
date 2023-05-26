@@ -238,8 +238,6 @@ exec --no-startup-id feh --bg-fill ~/configWorkspace/wallpaper_cloud.png
 
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xrdb -load .Xressources
-exec --no-startup-id firefox --ProfileManager
-exec --no-startup-id urxvt
 exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'panga:DejaVu Sans Mono:pixelsize=35'"
 
 bindsym Mod4+Tab workspace back_and_forth
