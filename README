@@ -3,7 +3,7 @@ Configure correctly i3status and branch if nessecary
 
 
 # Interesting Crontab entry
-55 9-16 * * 1-5 notify-send "Drink water"
+15 * * * 1-5 XDG_RUNTIME_DIR=/run/user/$(id -u) notify-send "Drink water"
 
 # NOTES:
 bg_removal
