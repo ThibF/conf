@@ -172,9 +172,9 @@ bar {
 
 # Lock and power management stuff
 # Locker is starting i3lock and forces dpms off to turn off the screen immediately
-set $Locker i3lock -i /home/thibf/Downloads/wallpaper-2710336.png -p default -n -d -c 364b71
+set $Locker i3lock -i /home/thibf/Downloads/wallpaper-2710336.png -p default -n -d -c 364b71 && canonical/thibf-tools/unlock_laptop.sh
 #&& xset dpms force off
-bindsym Mod4+Shift+l exec playerctl pause; exec $Locker
+bindsym Mod4+Shift+l exec playerctl pause; exec /home/thibf/canonical/thibf-tools/lock_laptop.sh; exec $Locker
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
