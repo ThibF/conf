@@ -1,14 +1,28 @@
-#!/bin/sh
+#!/bin/sh -eu
 
-python -mplatform | grep -qi Ubuntu && gsettings set org.gnome.desktop.background show-desktop-icons false
+python3 -mplatform | grep -qi Ubuntu && gsettings set org.gnome.desktop.background show-desktop-icons false
 mkdir ~/.i3
 ln -fs "$(pwd)/configUs" ~/.i3/config
-sudo apt-get install rxvt-unicode zsh feh i3blocks fonts-font-awesome xsel nano i3 curl git compton unzip playerctl autorandr lm-sensors
 ln -fs "$(pwd)/i3status.conf" ~/.i3status.conf
 ln -fs "$(pwd)/.Xresources" ~/.Xressources
 ln -fs "$(pwd)/i3blocks" ~/.config/i3blocks
-sudo apt-get install rxvt-unicode
-sudo ln -fs "$(pwd)/xorg.conf.new" /etc/X11/xorg.conf
+
+sudo apt-get update
+
+sudo apt-get install rxvt-unicode zsh feh i3blocks fonts-font-awesome xsel nano i3 curl git compton unzip playerctl autorandr lm-sensors tig
+
+# Usefull for laptop
+#sudo ln -fs "$(pwd)/xorg.conf.new" /etc/X11/xorg.conf
+
+# Required for Appimage
+sudo apt install libfuse2
+
+sudo apt install wine
+
+# Hue control
+# sudo apt install npm
+# sudo npm install -g hueadm
+
 
 sudo mkdir -p /usr/lib/urxvt/perl
 sudo cp "$(pwd)/resize-font" /usr/lib/urxvt/perl
@@ -33,10 +47,18 @@ fi
 echo 'DISABLE_UPDATE_PROMPT="true"' >> ~/.zshrc
 echo 'export UPDATE_ZSH_DAYS=31' >> ~/.zshrc
 
-#sudo apt install dbus lua-lgi lua-posix lua5.1 luajit qemu qemu-user-static htop meld pavucontrol automake screen microcom u-boot-tools device-tree-compiler iperf chromium-browser kdeconnect nmap
+
+# Development related
+#sudo apt install dbus lua-lgi lua-posix lua5.1 luajit qemu qemu-user-static automake screen microcom u-boot-tools device-tree-compiler iperf
 #sudo apt install qemu-user-static
 
+# Canonical
+#sudo apt install python3-launchpadlib python3-jira python3-pandas bash-completion build-essential ccache debhelper devscripts docbook-utils fakeroot gawk git git-email kernel-wedge libncurses5-dev makedumpfile schroot sharutils snapcraft transfig ubuntu-dev-tools wget xmlto
 
+# Utilities
+#sudo apt install picocom thunderbird kdeconnect nmap meld htop screen vlc pavucontrol chromium-browser p7zip-full redshift tig vorta
+
+# Sublime text
 # wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 # echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 #  sudo apt update && sudo apt install sublime-text
@@ -49,5 +71,3 @@ echo 'export UPDATE_ZSH_DAYS=31' >> ~/.zshrc
 
 #sudo usermod -a -G dialout ${USER}
 #sudo usermod -a -G docker ${USER}
-
-# sudo npm install -g hueadm
