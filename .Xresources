@@ -37,13 +37,16 @@ URxvt.perl-lib: /usr/lib/urxvt/perl
 !------------------------------------------------
 URxvt.perl-ext-common: default,matcher,resize-font,selection-to-clipboard
 !tabbed
-URxvt.matcher.button: 1
+URxvt.matcher.button: 2
 URxvt.perl-ext: default
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/google-chrome-unstable
 URxvt.url-select.underline: true
 !disable the fucking bell
 URxvt.insecure: false
+URxvt.matcher.pattern.1:LP:\\s\\#([0-9]+)
+URxvt.matcher.launcher.1:firefox launchpad.net/bugs/$1
+
 ! URXVT COPY PASTE SHORTCUTS
 !------------------------------------------------
 URxvt.iso14755: False
