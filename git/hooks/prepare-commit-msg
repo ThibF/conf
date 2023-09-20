@@ -1,0 +1,32 @@
+#!/bin/sh
+ORIG_MSG_FILE="$1"
+COMMIT_SOURCE="$2"
+COMMIT_MSG_FILE="$1"
+SHA1="$3"
+
+
+# Quit if there is already a commit message
+original_lc="$(sed -n '0,/---- >8 ----/p' $1 | grep -v "#" | wc -l)"
+if [ "$original_lc" -gt 1 ]; then
+  exit 0
+fi
+
+
+# Add commented signoff at the end of the commit
+SOB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-byADDED: \1/p')
+git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
+sed -i 's/Signed-off-byADDED/#Signed-off-by/g' "$COMMIT_MSG_FILE"
+if test -z "$COMMIT_SOURCE"
+then
+  /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
+fi
+
+
+# List previous commits message if we are modifying only one file
+file_modified="$(git diff --cached --name-only)"
+file_cnt="$(echo "$file_modified" | wc -l)"
+if [ -n "$file_modified" ] && [ "$file_cnt" -eq 1 ]; then
+  previous_msg="$(git log -5 --pretty=format:'%B\n' -- "$file_modified" | awk '{print "#"$0}')"
+  printf "%s\n# Previous commits:\n%s" "$(cat $ORIG_MSG_FILE)" "$previous_msg" > "$ORIG_MSG_FILE"
+fi
+
