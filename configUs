@@ -108,6 +108,7 @@ bindsym Mod4+y workspace y:Media
 bindsym Mod4+e workspace e:Editor
 bindsym Mod4+c workspace c:Call
 bindsym Mod4+s workspace s:Steam
+bindsym Mod4+t workspace t:Trash
 
 # move focused container to workspace
 bindsym Mod4+Shift+1 move container to workspace 1
@@ -127,6 +128,7 @@ bindsym Mod4+Shift+y move container to workspace y:Media
 bindsym Mod4+Shift+e move container to workspace e:Editor
 bindsym Mod4+Shift+c move container to workspace c:Call
 bindsym Mod4+Shift+s move container to workspace s:Steam
+bindsym Mod4+Shift+t move container to workspace t:Trash
 
 bindsym Mod4+g sticky toggle
 
