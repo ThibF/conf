@@ -1,5 +1,12 @@
 #!/bin/sh -eu
 
+current_dir="$(basename $PWD)"
+
+if [ $current_dir != "configWorkspace" ]; then
+  echo wrong dir
+  exit 2
+fi
+
 python3 -mplatform | grep -qi Ubuntu && gsettings set org.gnome.desktop.background show-desktop-icons false
 mkdir ~/.i3
 ln -fs "$(pwd)/configUs" ~/.i3/config
@@ -25,7 +32,7 @@ sudo apt install wine
 
 
 sudo mkdir -p /usr/lib/urxvt/perl
-sudo cp "$(pwd)/resize-font" /usr/lib/urxvt/perl
+sudo cp "$(pwd)/scripts/resize-font" /usr/lib/urxvt/perl
 
 if command -v nautilus; then
 	cp "$(pwd)/user-dirs.dirs" ~/.config/user-dirs.dirs
