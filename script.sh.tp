@@ -1,0 +1,67 @@
+#!/bin/sh -eu
+#
+
+pr_error()
+{
+    echo "\e[31m${*}\e[0m" 1>&2
+}
+
+pr_note()
+{
+    echo "\e[32m${*}\e[0m"
+}
+
+pr_info()
+{
+    echo "\e[33m${*}\e[0m"
+}
+
+usage()
+{
+    cat <<EOF
+Usage: SCRIPT_NAME.sh [OPTIONS] POSITIONAL_ARG
+
+
+Positional arguments:
+  POSITIONAL_ARG  Description
+
+Optional arguments:
+  -u, --user               Description.
+  -d, --dry-run            Description.
+  -h, --help               Show this help message and exit.
+
+Examples:
+  TODODO
+
+EOF
+    exit 2
+}
+
+dry_run=""
+arg_1=""
+
+while [ "${#}" -gt 0 ] ; do
+        case "${1}" in
+                -s|--system)
+                    type="system"
+                  ;;
+                -u|--dry-run)
+                    type="user"
+                    ;;
+                -h|--help)
+                    usage
+                    ;;
+                *)
+                    if [ -n "${arg_1:-}" ] ; then
+                            usage
+                    fi
+                    arg_1=${1}
+                    ;;
+        esac
+        shift
+done
+
+if [ -z "${arg_1}" ] ; then
+    usage
+fi
+
