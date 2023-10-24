@@ -115,12 +115,12 @@ to_XLR() {
 		echo "'${sink}' not found"
 		exit 1
 	fi
-	pactl set-default-sink $sink
-	pactl set-default-source $source
 	pactl set-sink-volume $GOXLR_CHAT 100%
 	pactl set-sink-volume $GOXLR_MUSIC 100%
 	pactl set-sink-volume $GOXLR_SYSTEM 100%
-	sleep 0.1
+	pactl set-default-sink $sink
+	pactl set-default-source $source
+	sleep 0.01
 	pactl -fjson list sink-inputs | jq -c '.[]' | while read -r i; do
 		name="$(printf "%s" "$i" | jq -r '.["properties"]["application.name"]')"
 		current_sink="$(printf "%s" "$i" | jq '.["sink"]')"
