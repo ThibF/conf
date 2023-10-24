@@ -6,10 +6,22 @@
 
 GOXLR_CHAT_PATTERN="alsa_output.usb-TC-Helicon_GoXLRMini-00.*HiFi__goxlr_chat_GoXLRMini__sink"
 GOXLR_CHAT="$(pactl list short sinks | grep "$GOXLR_CHAT_PATTERN" | awk '{print $2}')"
+if [ -z "$GOXLR_CHAT" ]; then
+	GOXLR_CHAT_PATTERN="alsa_output.usb-TC-Helicon_GoXLRMini-00.*6_7.*_sink"
+	GOXLR_CHAT="$(pactl list short sinks | grep "$GOXLR_CHAT_PATTERN" | awk '{print $2}')"
+fi
 GOXLR_MUSIC_PATTERN="alsa_output.usb-TC-Helicon_GoXLRMini-00.*HiFi__goxlr_music_GoXLRMini__sink"
 GOXLR_MUSIC="$(pactl list short sinks | grep "$GOXLR_MUSIC_PATTERN" | awk '{print $2}')"
+if [ -z "$GOXLR_MUSIC" ]; then
+	GOXLR_MUSIC_PATTERN="alsa_output.usb-TC-Helicon_GoXLRMini-00.*2_3.*_sink"
+	GOXLR_MUSIC="$(pactl list short sinks | grep "$GOXLR_MUSIC_PATTERN" | awk '{print $2}')"
+fi
 GOXLR_SYSTEM_PATTERN="alsa_output.usb-TC-Helicon_GoXLRMini-00.*HiFi__goxlr_system_GoXLRMini__sink"
 GOXLR_SYSTEM="$(pactl list short sinks | grep "$GOXLR_SYSTEM_PATTERN" | awk '{print $2}')"
+if [ -z "$GOXLR_SYSTEM" ]; then
+	GOXLR_SYSTEM_PATTERN="alsa_output.usb-TC-Helicon_GoXLRMini-00.*0_1.*_sink"
+	GOXLR_SYSTEM="$(pactl list short sinks | grep "$GOXLR_SYSTEM_PATTERN" | awk '{print $2}')"
+fi
 
 CONFIG_DIR="/home/$USER/.config/ssc"
 target="${1? Missing HP|headset|XLR}"
@@ -91,10 +103,10 @@ to_speaker() {
 }
 
 to_XLR() {
-	sink_pattern="alsa_output.usb-TC-Helicon_GoXLRMini-00.*HiFi__goxlr_system_GoXLRMini__sink"
+	sink_pattern="alsa_output.usb-TC-Helicon_GoXLRMini-00.*0_1.*_sink"
 	sink="$(pactl list short sinks | grep "$sink_pattern" | awk '{print $2}')"
 	sink_id="$(pactl list short sinks | grep $sink | awk '{print $1}')"
-	source_pattern="alsa_input.usb-TC-Helicon_GoXLRMini-00.*HiFi__goxlr_chatmic_GoXLRMini__source"
+	source_pattern="alsa_input.usb-TC-Helicon_GoXLRMini-00.*0_1.*_source"
 	source="$(pactl list short sources | grep $source_pattern | awk '{print $2}')"
 	pactl_sink_id="$(pactl -fjson list short sinks | \
 		             jq --arg pattern "$sink_pattern" '.[] | select(.name|match($pattern))' | \
