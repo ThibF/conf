@@ -10,12 +10,15 @@ original_lc="$(sed -n '0,/---- >8 ----/p' $1 | grep -v "#" | wc -l)"
 if [ "$original_lc" -gt 1 ]; then
   exit 0
 fi
-
+cnt="$(cat $1 | sed '/^\s*#/d;/^\s*$/d' | wc -l)"
+if [ "$cnt" -gt 0 ]; then
+  exit 0
+fi
 
 # Add commented signoff at the end of the commit
 SOB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-byADDED: \1/p')
 git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
-sed -i 's/Signed-off-byADDED/#Signed-off-by/g' "$COMMIT_MSG_FILE"
+sed -i 's/Signed-off-byADDED/# Signed-off-by/g' "$COMMIT_MSG_FILE"
 if test -z "$COMMIT_SOURCE"
 then
   /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
