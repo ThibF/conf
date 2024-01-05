@@ -84,7 +84,6 @@ bindsym Mod4+a focus parent
 # https://i3wm.org/docs/userguide.html#for_window
 for_window [class="(?i)obsidian"] move container to workspace o:Obsidian
 for_window [title="(?i)google meet"] move container to workspace c:Call
-for_window [title="(?i)meet"] move container to workspace c:Call
 for_window [title="(?i)Jitsi"] move container to workspace c:Call
 for_window [class="(?i)Sublime_text"] move container to workspace e:Editor
 for_window [class="(?i)Gnome-calculator"] floating toggle
