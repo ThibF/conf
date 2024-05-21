@@ -23,7 +23,7 @@ font pango:JetBrains Mono Regular 20
 floating_modifier Mod4
 
 # start a terminal
-bindsym Mod4+Return exec urxvt
+bindsym Mod4+Return exec ~/configWorkspace/scripts/open_terminal_same_dir.sh || urxvt
 
 # kill focused window
 bindsym Mod4+Shift+W kill
