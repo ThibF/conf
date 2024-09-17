@@ -51,7 +51,13 @@ print_current_status() {
 main() {
 
 	check_current_state
-	if [ "${BLOCK_BUTTON:-0}" -eq ${LEFT_CLICK} ] || [ -n "${1:-}" ]; then
+	if [ "${1}" = "off" ]; then
+		BLOCK_BUTTON=${RIGHT_CLICK}
+	else
+		BLOCK_BUTTON=${LEFT_CLICK}
+	fi
+
+	if [ "${BLOCK_BUTTON:-0}" -eq ${LEFT_CLICK} ]; then
 		switch_state
 	elif [ "${BLOCK_BUTTON:-0}" -eq ${MIDDLE_CLICK} ]; then
 		hueadm group "${LIGHT_GROUP}" lselect > /dev/null
